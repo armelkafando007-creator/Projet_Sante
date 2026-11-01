@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Publier une actualité — SangSanté</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="index.html">Accueil</a>
+                <a href="demandes_actives.html">Demandes</a>
+                <a href="statistiques.html">Statistiques</a>
+                <a href="actualites.html">Actualités</a>
+                <a href="aide.html">Aide</a>
+                <a href="a_propos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="tableau_de_bord_admin.html">Mon espace</a>
+            </nav>
+        </header>
+        <main>
+            <section id="publier_actualite">
+                <h2>Publier une actualité</h2>
+                <p>Cette actualité apparaîtra dans la section "Actualités SangSanté" de la page publique — distincte des campagnes publiées par les établissements.</p>
+                <form>
+                    <label for="titre_actualite">Titre</label>
+                    <input type="text" id="titre_actualite" name="titre_actualite" placeholder="Ex. Journée mondiale du donneur de sang" required>
+                    <label for="date_actualite">Date de publication</label>
+                    <input type="date" id="date_actualite" name="date_actualite" required>
+                    <label for="contenu_actualite">Contenu</label>
+                    <textarea id="contenu_actualite" name="contenu_actualite" rows="5" required></textarea>
+                    <button type="submit">Publier l'actualité</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>

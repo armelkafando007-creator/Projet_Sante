@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Inscrivez-vous comme donneur de sang sur SangSanté et aidez à sauver des vies au Burkina Faso.">
+        <title>Devenir donneur — SangSanté</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="index.html">Accueil</a>
+                <a href="demandes_actives.html">Demandes</a>
+                <a href="statistiques.html">Statistiques</a>
+                <a href="actualites.html">Actualités</a>
+                <a href="aide.html">Aide</a>
+                <a href="a_propos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+        </header>
+        <main>
+            <section id="inscription_donneur">
+            <h2>Devenir donneur</h2>
+            <p>Remplis ce formulaire pour rejoindre la communauté des donneurs.</p>
+            <form>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+                <label for="genre">Genre</label>
+                <select id="genre" name="genre" required>
+                    <option value="">-- Choisir --</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+                <label for="groupe_sanguin">Groupe sanguin</label>
+                <select id="groupe_sanguin" name="groupe_sanguin" required>
+                    <option value="">-- Choisir --</option>
+                    <option value="O-">O-</option>
+                    <option value="O+">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="A+">A+</option>
+                    <option value="B-">B-</option>
+                    <option value="B+">B+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="AB+">AB+</option>
+                </select>
+
+                <label for="region">Région</label>
+                <select id="region" name="region" required>
+                    <option value="">-- Choisir --</option>
+                    <option value="Bankui">Bankui</option>
+                    <option value="Djôrô">Djôrô</option>
+                    <option value="Goulmou">Goulmou</option>
+                    <option value="Guiriko">Guiriko</option>
+                    <option value="Kadiogo">Kadiogo</option>
+                    <option value="Kuilsé">Kuilsé</option>
+                    <option value="Liptako">Liptako</option>
+                    <option value="Nando">Nando</option>
+                    <option value="Nakambé">Nakambé</option>
+                    <option value="Nazinon">Nazinon</option>
+                    <option value="Oubri">Oubri</option>
+                    <option value="Sirba">Sirba</option>
+                    <option value="Soum">Soum</option>
+                    <option value="Tannounya">Tannounya</option>
+                    <option value="Tapoa">Tapoa</option>
+                    <option value="Sourou">Sourou</option>
+                    <option value="Yaadga">Yaadga</option>
+                </select>
+
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" required>
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" required>
+                <fieldset>
+                    <legend>Avez-vous déjà donné du sang ?</legend>
+                    <label><input type="radio" name="deja_donne" value="oui" required> Oui</label>
+                    <label><input type="radio" name="deja_donne" value="non" required> Non</label>
+                </fieldset>
+                <label for="derniere_date_don">Date de votre dernier don</label>
+                <input type="date" id="derniere_date_don" name="derniere_date_don">
+                <p><small>Laissez ce champ vide si c'est votre premier don.</small></p>
+                <button type="submit">M'inscrire comme donneur</button>
+            </form>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>

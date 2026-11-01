@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Consultez les demandes de sang actives publiées par les établissements de santé vérifiés à travers le Burkina Faso.">
+        <title>Demandes — SangSanté</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="index.html">Accueil</a>
+                <a href="demandes_actives.html">Demandes</a>
+                <a href="statistiques.html">Statistiques</a>
+                <a href="actualites.html">Actualités</a>
+                <a href="aide.html">Aide</a>
+                <a href="a_propos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+        </header>
+        <main>
+            <section id="demandes_actives">
+                <h2>Demandes de sang actives</h2>
+                <p>Ces demandes proviennent d'établissements de santé vérifiés. Si vous êtes donneur compatible, connectez-vous pour être mis en relation.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Groupe recherché</th>
+                            <th>Établissement</th>
+                            <th>Région</th>
+                            <th>Urgence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>O-</td>
+                            <td>CHU Yalgado Ouédraogo</td>
+                            <td>Centre</td>
+                            <td><span class="badge badge_eleve">Élevée</span></td>
+                        </tr>
+                        <tr>
+                            <td>A+</td>
+                            <td>CRTS Bobo-Dioulasso</td>
+                            <td>Hauts-Bassins</td>
+                            <td><span class="badge badge_modere">Modérée</span></td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>CHR Banfora</td>
+                            <td>Cascades</td>
+                            <td><span class="badge badge_eleve">Élevée</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="rejoindre">
+                <h2>Vous pouvez aider</h2>
+                <p>Un seul don peut sauver jusqu'à trois vies. Rejoignez la communauté des donneurs dès maintenant.</p>
+                <a href="inscription_donneur.html">Devenir donneur</a>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>

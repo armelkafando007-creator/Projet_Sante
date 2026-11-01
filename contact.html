@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contactez l'équipe SangSanté pour toute question sur le don ou la demande de sang">
+        <title>Contact — SangSanté</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="index.html">Accueil</a>
+                <a href="demandes_actives.html">Demandes</a>
+                <a href="statistiques.html">Statistiques</a>
+                <a href="actualites.html">Actualités</a>
+                <a href="aide.html">Aide</a>
+                <a href="a_propos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+        </header>
+        <main>
+            <section id="formulaire_contact">
+                <h2>Nous contacter</h2>
+                <p>Une question ? Écrivez-nous, nous répondrons rapidement.</p>
+                <form>
+                    <label for="nom">Nom complet</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>
