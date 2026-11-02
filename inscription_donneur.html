@@ -26,7 +26,7 @@
             <section id="inscription_donneur">
             <h2>Devenir donneur</h2>
             <p>Remplis ce formulaire pour rejoindre la communauté des donneurs.</p>
-            <form>
+            <form id="formulaire_inscription" novalidate>
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
                 <label for="prenom">Prénom</label>
@@ -81,9 +81,11 @@
                     <label><input type="radio" name="deja_donne" value="oui" required> Oui</label>
                     <label><input type="radio" name="deja_donne" value="non" required> Non</label>
                 </fieldset>
-                <label for="derniere_date_don">Date de votre dernier don</label>
-                <input type="date" id="derniere_date_don" name="derniere_date_don">
-                <p><small>Laissez ce champ vide si c'est votre premier don.</small></p>
+                <div id="bloc_date_don">
+                    <label for="derniere_date_don">Date de votre dernier don</label>
+                    <input type="date" id="derniere_date_don" name="derniere_date_don">
+                    <p><small>Laissez ce champ vide si c'est votre premier don.</small></p>
+                </div>
                 <button type="submit">M'inscrire comme donneur</button>
             </form>
             </section>
@@ -92,5 +94,6 @@
             <p>Contact : contact@sangsante.exemple</p>
         </footer>
         <script src="js/script.js"></script>
+        <script src="js/inscription.js"></script>
     </body>
 </html>
