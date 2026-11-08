@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Inscrivez votre hôpital ou centre de transfusion sanguine pour publier des demandes de sang.">
+        <title>Inscription établissement — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'connexion' %}">Connexion</a>
+            </nav>
+        </header>
+        <main>
+            <section id="inscription_etablissement">
+                <h2>Inscription établissement</h2>
+                <p>Réservé aux centres de transfusion et hôpitaux. Votre compte sera vérifié par un administrateur avant activation.</p>
+                <form>
+                    <label for="nom_etablissement">Nom de l'établissement</label>
+                    <input type="text" id="nom_etablissement" name="nom_etablissement" required>
+                    <label for="type_etablissement">Type d'établissement</label>
+                    <select id="type_etablissement" name="type_etablissement" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="CNTS">CNTS — Centre National de Transfusion Sanguine</option>
+                        <option value="CRTS">CRTS — Centre Régional de Transfusion Sanguine</option>
+                        <option value="CHU">CHU — Centre Hospitalier Universitaire</option>
+                        <option value="CHR">CHR — Centre Hospitalier Régional</option>
+                        <option value="CMA">CMA — Centre Médical avec Antenne Chirurgicale</option>
+                        <option value="CSPS">CSPS — Centre de Santé et de Promotion Sociale</option>
+                        <option value="autre">Autre</option>
+                    </select>
+
+                    <label for="region">Région</label>
+                    <select id="region" name="region" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="Bankui">Bankui</option>
+                        <option value="Djôrô">Djôrô</option>
+                        <option value="Goulmou">Goulmou</option>
+                        <option value="Guiriko">Guiriko</option>
+                        <option value="Kadiogo">Kadiogo</option>
+                        <option value="Kuilsé">Kuilsé</option>
+                        <option value="Liptako">Liptako</option>
+                        <option value="Nando">Nando</option>
+                        <option value="Nakambé">Nakambé</option>
+                        <option value="Nazinon">Nazinon</option>
+                        <option value="Oubri">Oubri</option>
+                        <option value="Sirba">Sirba</option>
+                        <option value="Soum">Soum</option>
+                        <option value="Tannounya">Tannounya</option>
+                        <option value="Tapoa">Tapoa</option>
+                        <option value="Sourou">Sourou</option>
+                        <option value="Yaadga">Yaadga</option>
+                    </select>
+
+                    <label for="ville_etablissement">Ville</label>
+                    <input type="text" id="ville_etablissement" name="ville_etablissement" required>
+                    <label for="responsable">Nom du responsable</label>
+                    <input type="text" id="responsable" name="responsable" required>
+                    <label for="telephone_etablissement">Téléphone</label>
+                    <input type="tel" id="telephone_etablissement" name="telephone_etablissement" required>
+                    <label for="email_etablissement">Email professionnel</label>
+                    <input type="email" id="email_etablissement" name="email_etablissement" required>
+                    <label for="justificatif">Justificatif officiel (agrément, certificat...)</label>
+                    <input type="file" id="justificatif" name="justificatif" required>
+                    <button type="submit">Soumettre la demande d'inscription</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

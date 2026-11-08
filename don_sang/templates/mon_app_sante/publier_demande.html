@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Publier une demande — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'tableau_de_bord_etablissement' %}">Mon espace</a>
+            </nav>
+        </header>
+        <main>
+            <section id="publier_demande">
+                <h2>Publier une demande de sang</h2>
+                <p>Votre établissement étant déjà vérifié, cette demande sera publiée immédiatement, sans attente.</p>
+                <form>
+                    <label for="groupe_recherche">Groupe sanguin recherché</label>
+                    <select id="groupe_recherche" name="groupe_recherche" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="O-">O-</option>
+                        <option value="O+">O+</option>
+                        <option value="A-">A-</option>
+                        <option value="A+">A+</option>
+                        <option value="B-">B-</option>
+                        <option value="B+">B+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="AB+">AB+</option>
+                    </select>
+                    <fieldset>
+                        <legend>Niveau d'urgence</legend>
+                        <label><input type="radio" name="urgence" value="elevee" required> Élevée</label>
+                        <label><input type="radio" name="urgence" value="moderee" required> Modérée</label>
+                        <label><input type="radio" name="urgence" value="faible" required> Faible</label>
+                    </fieldset>
+                    <label for="service">Service concerné</label>
+                    <input type="text" id="service" name="service" placeholder="Ex. Urgences, Chirurgie, Maternité" required>
+                    <label for="quantite">Nombre de poches nécessaires</label>
+                    <input type="number" id="quantite" name="quantite" min="1" required>
+                    <label for="description">Description complémentaire</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Contexte, précisions utiles pour les donneurs..."></textarea>
+                    <button type="submit">Publier la demande</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

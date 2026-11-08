@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Connectez-vous à votre espace donneur ou établissement sur SangSanté.">
+        <title>Connexion — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'connexion' %}">Connexion</a>
+            </nav>
+        </header>
+        <main>
+            <section id="connexion_donneur">
+                <h2>Je suis donneur</h2>
+                <form id="formulaire_connexion_donneur">
+                    <label for="email_donneur">Email</label>
+                    <input type="email" id="email_donneur" name="email_donneur" required>
+                    <label for="mdp_donneur">Mot de passe</label>
+                    <input type="password" id="mdp_donneur" name="mdp_donneur" required>
+                    <button type="submit">Me connecter</button>
+                </form>
+                <p>Pas encore de compte ? <a href="{% url 'inscription_donneur' %}">Devenir donneur</a></p>
+            </section>
+            <section id="connexion_etablissement">
+                <h2>Je suis un établissement</h2>
+                <form id="formulaire_connexion_etablissement">
+                    <label for="email_etablissement">Email professionnel</label>
+                    <input type="email" id="email_etablissement" name="email_etablissement" required>
+                    <label for="mdp_etablissement">Mot de passe</label>
+                    <input type="password" id="mdp_etablissement" name="mdp_etablissement" required>
+                    <button type="submit">Me connecter</button>
+                </form>
+                <p>Pas encore de compte ? <a href="{% url 'inscription_etablissement' %}">Inscrire mon établissement</a></p>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/connexion.js' %}"></script>
+    </body>
+</html>

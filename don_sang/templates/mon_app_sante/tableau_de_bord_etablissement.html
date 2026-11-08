@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Tableau de bord établissement — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'tableau_de_bord_etablissement' %}">Mon espace</a>
+            </nav>
+        </header>
+        <main>
+            <section id="bienvenue_etablissement">
+                <h2>Bonjour, CHU Yalgado Ouédraogo</h2>
+                <p>Type : CHU — Région : Kadiogo</p>
+                <p><strong>Compte vérifié</strong> le 3 janvier 2026</p>
+            </section>
+            <section id="mes_demandes_actives">
+                <h2>Mes demandes actives</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Groupe recherché</th>
+                            <th>Service</th>
+                            <th>Urgence</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>O-</td>
+                            <td>Urgences</td>
+                            <td>Élevée</td>
+                            <td>Publiée</td>
+                        </tr>
+                        <tr>
+                            <td>AB+</td>
+                            <td>Chirurgie</td>
+                            <td>Modérée</td>
+                            <td>Donneurs alertés</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="raccourcis_etablissement">
+                <h2>Actions</h2>
+                <ul>
+                    <li><a href="{% url 'publier_demande' %}">Publier une nouvelle demande</a></li>
+                    <li><a href="{% url 'mes_demandes' %}">Voir toutes mes demandes</a></li>
+                    <li><a href="{% url 'publier_campagne' %}">Publier une campagne de don</a></li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Publier une actualité — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'tableau_de_bord_admin' %}">Mon espace</a>
+            </nav>
+        </header>
+        <main>
+            <section id="publier_actualite">
+                <h2>Publier une actualité</h2>
+                <p>Cette actualité apparaîtra dans la section "Actualités SangSanté" de la page publique — distincte des campagnes publiées par les établissements.</p>
+                <form>
+                    <label for="titre_actualite">Titre</label>
+                    <input type="text" id="titre_actualite" name="titre_actualite" placeholder="Ex. Journée mondiale du donneur de sang" required>
+                    <label for="date_actualite">Date de publication</label>
+                    <input type="date" id="date_actualite" name="date_actualite" required>
+                    <label for="contenu_actualite">Contenu</label>
+                    <textarea id="contenu_actualite" name="contenu_actualite" rows="5" required></textarea>
+                    <button type="submit">Publier l'actualité</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

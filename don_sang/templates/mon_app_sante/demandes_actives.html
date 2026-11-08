@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Consultez les demandes de sang actives publiées par les établissements de santé vérifiés à travers le Burkina Faso.">
+        <title>Demandes — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'connexion' %}">Connexion</a>
+            </nav>
+        </header>
+        <main>
+            <section id="demandes_actives">
+                <h2>Demandes de sang actives</h2>
+                <p>Ces demandes proviennent d'établissements de santé vérifiés. Si vous êtes donneur compatible, connectez-vous pour être mis en relation.</p>
+                <div class="filtre">
+                    <label for="filtre_groupe">Filtrer par groupe sanguin</label>
+                    <select id="filtre_groupe">
+                        <option value="tous">Tous les groupes</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="filtre">
+                    <label for="filtre_urgence">Filtrer par urgence</label>
+                    <select id="filtre_urgence">
+                        <option value="tous">Toutes les urgences</option>
+                        <option value="Élevée">Élevée</option>
+                        <option value="Modérée">Modérée</option>
+                        <option value="Faible">Faible</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Groupe recherché</th>
+                            <th>Établissement</th>
+                            <th>Région</th>
+                            <th>Urgence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>O-</td>
+                            <td>CHU Yalgado Ouédraogo</td>
+                            <td>Centre</td>
+                            <td><span class="badge badge_eleve">Élevée</span></td>
+                        </tr>
+                        <tr>
+                            <td>A+</td>
+                            <td>CRTS Bobo-Dioulasso</td>
+                            <td>Hauts-Bassins</td>
+                            <td><span class="badge badge_modere">Modérée</span></td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>CHR Banfora</td>
+                            <td>Cascades</td>
+                            <td><span class="badge badge_eleve">Élevée</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <p id="message_vide" hidden>Aucune demande ne correspond à ces filtres pour le moment.</p>
+            </section>
+            <section id="rejoindre">
+                <h2>Vous pouvez aider</h2>
+                <p>Un seul don peut sauver jusqu'à trois vies. Rejoignez la communauté des donneurs dès maintenant.</p>
+                <a href="{% url 'inscription_donneur' %}">Devenir donneur</a>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/demandes.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Mes demandes — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'tableau_de_bord_etablissement' %}">Mon espace</a>
+            </nav>
+        </header>
+        <main>
+            <section id="mes_demandes">
+                <h2>Mes demandes</h2>
+                <p>Historique complet des demandes publiées par votre établissement.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Groupe recherché</th>
+                            <th>Service</th>
+                            <th>Urgence</th>
+                            <th>Statut</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>O-</td>
+                            <td>Urgences</td>
+                            <td>Élevée</td>
+                            <td>Publiée</td>
+                            <td><a href="#">Clôturer</a></td>
+                        </tr>
+                        <tr>
+                            <td>AB+</td>
+                            <td>Chirurgie</td>
+                            <td>Modérée</td>
+                            <td>Donneurs alertés</td>
+                            <td><a href="#">Clôturer</a></td>
+                        </tr>
+                        <tr>
+                            <td>A+</td>
+                            <td>Maternité</td>
+                            <td>Élevée</td>
+                            <td>Résolue</td>
+                            <td><em>Clôturée le 2 septembre 2026</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="nouvelle_demande">
+                <a href="{% url 'publier_demande' %}">Publier une nouvelle demande</a>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

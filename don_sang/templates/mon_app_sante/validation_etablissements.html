@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <title>Validation des établissements — SangSanté</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>SangSanté</h1>
+            <button class="bouton_menu" id="bouton_menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu_principal">☰</button>
+            <nav id="menu_principal">
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'demandes_actives' %}">Demandes</a>
+                <a href="{% url 'statistiques' %}">Statistiques</a>
+                <a href="{% url 'actualites' %}">Actualités</a>
+                <a href="{% url 'aide' %}">Aide</a>
+                <a href="{% url 'a_propos' %}">À propos</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'tableau_de_bord_admin' %}">Mon espace</a>
+            </nav>
+        </header>
+        <main>
+            <section id="en_attente">
+                <h2>En attente de validation</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Type</th>
+                            <th>Région</th>
+                            <th>Justificatif</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CSPS de Koudougou</td>
+                            <td>CSPS</td>
+                            <td>Guiriko</td>
+                            <td><a href="#">Voir le document</a></td>
+                            <td><a href="#">Valider</a> — <a href="#">Rejeter</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMA de Dori</td>
+                            <td>CMA</td>
+                            <td>Sahel</td>
+                            <td><a href="#">Voir le document</a></td>
+                            <td><a href="#">Valider</a> — <a href="#">Rejeter</a></td>
+                        </tr>
+                        <tr>
+                            <td>CHR de Tenkodogo</td>
+                            <td>CHR</td>
+                            <td>Nakambé</td>
+                            <td><a href="#">Voir le document</a></td>
+                            <td><a href="#">Valider</a> — <a href="#">Rejeter</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="deja_valides">
+                <h2>Établissements déjà validés</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Type</th>
+                            <th>Région</th>
+                            <th>Validé le</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CHU Yalgado Ouédraogo</td>
+                            <td>CHU</td>
+                            <td>Kadiogo</td>
+                            <td>3 janvier 2026</td>
+                            <td><a href="#">Désactiver</a></td>
+                        </tr>
+                        <tr>
+                            <td>CRTS Bobo-Dioulasso</td>
+                            <td>CRTS</td>
+                            <td>Guiriko</td>
+                            <td>17 février 2026</td>
+                            <td><a href="#">Désactiver</a></td>
+                        </tr>
+                        <tr>
+                            <td>CHR Banfora</td>
+                            <td>CHR</td>
+                            <td>Djôrô</td>
+                            <td>2 septembre 2026</td>
+                            <td><a href="#">Désactiver</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <p>Contact : contact@sangsante.exemple</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>
